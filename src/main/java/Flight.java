@@ -1,3 +1,4 @@
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class Flight {
@@ -11,11 +12,16 @@ public class Flight {
     private ArrayList<Passenger> passengers;
     private ArrayList<CabinCrewMember> cabinCrewMembers;
     private String pilot;
+    private Passenger passenger;
+    private ArrayList<Integer> passengerSeat;
+
+
 
     public Flight(){
         this.pilots = new ArrayList<Pilot>();
         this.cabinCrewMembers = new ArrayList<CabinCrewMember>();
         this.passengers = new ArrayList<Passenger>();
+        this.passengerSeat = new ArrayList<Integer>();
         this.planeType = planeType;
         this.flightNumber = flightNumber;
         this.destination = destination;
@@ -25,6 +31,7 @@ public class Flight {
     }
 
     public void addPassengers(Passenger passenger) {
+
         this.passengers.add(passenger);
     }
 
@@ -79,5 +86,14 @@ public class Flight {
 
     public String getFlightDepartureTime() {
         return this.departureTime;
+    }
+
+    public ArrayList<Integer> getPassengerSeat() {
+        passengerSeat = passenger.getPassengerSeat();
+        return passengerSeat;
+        }
+
+    public int getPassengerSeatSize() {
+        return passengerSeat.size();
     }
 }

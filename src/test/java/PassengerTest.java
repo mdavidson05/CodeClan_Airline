@@ -6,10 +6,11 @@ import static org.junit.Assert.assertEquals;
 public class PassengerTest {
 
     Passenger passenger;
+    Flight flight;
 
     @Before
     public void before(){
-        passenger = new Passenger("Max", 1);
+        passenger = new Passenger("Max", 1, passenger.getFlightNumber(), passenger.getPassengerSeat());
     }
 
     @Test

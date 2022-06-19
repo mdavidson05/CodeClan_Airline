@@ -17,7 +17,7 @@ public class FlightTest {
     @Before
     public void before(){
         flight = new Flight();
-        passenger1 = new Passenger("Max", 1);
+        passenger1 = new Passenger("Max", 1, flight.getFlightNumber(), passenger1.getPassengerSeat());
         crewMember1 = new CabinCrewMember("John", "First Officer", "it's supposed to be on fire");
         pilot = new Pilot("Stuart", "Pilot", "Q12345", "yes");
         flight.addPassengers(passenger1);
@@ -68,5 +68,10 @@ public class FlightTest {
     @Test
     public void checkFlightHasDepartureTime(){
         assertEquals("1700", flight.getFlightDepartureTime());
+    }
+
+    @Test
+    public void checkPassengerHasBeenAssignedToFlight(){
+        assertEquals("FR273", passenger1.getPassengerFlight());
     }
 }
